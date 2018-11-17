@@ -1,7 +1,9 @@
 # pokedex-pure-js
 Pokédex PWA built using pure js components.
 
-To run the static server:
+You can see the live PWA application on [this link](https://evandro-slv.github.io/pokedex-pure-js/).
+
+To run the static server by yourself:
 
     npm i -g serve
     npm run start
