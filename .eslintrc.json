@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "serviceworker": true
+    },
+    "rules": { 
+        "import/extensions": "never"
+    }
+}
