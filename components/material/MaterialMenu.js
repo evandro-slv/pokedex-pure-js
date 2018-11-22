@@ -1,9 +1,9 @@
-class Menu extends HTMLElement {
-  constructor(props) {
-    super();
-    this.props = props;
+import BaseComponent from '../BaseComponent.js';
 
-    if (!this.props.items) throw new Error('Component <Menu>: prop [items] is required.');
+class MaterialMenu extends BaseComponent {
+  constructor(props) {
+    super(props);
+    this.props = props || {};
 
     this.render();
 
@@ -40,6 +40,11 @@ class Menu extends HTMLElement {
   }
 }
 
-customElements.define('material-menu', Menu);
+MaterialMenu.propTypes = {
+  items: { type: 'Array', isRequired: true },
+  title: { type: 'string' },
+};
 
-export default Menu;
+customElements.define('material-menu', MaterialMenu);
+
+export default MaterialMenu;

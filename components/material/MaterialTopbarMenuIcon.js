@@ -1,7 +1,9 @@
-class TopBarMenuIcon extends HTMLElement {
+import BaseComponent from '../BaseComponent.js';
+
+class MaterialTopbarMenuIcon extends BaseComponent {
   constructor(props) {
-    super();
-    this.props = props;
+    super(props);
+    this.props = props || {};
     this.render();
   }
 
@@ -21,6 +23,10 @@ class TopBarMenuIcon extends HTMLElement {
   }
 }
 
-customElements.define('material-topbar-menu-icon', TopBarMenuIcon);
+MaterialTopbarMenuIcon.propTypes = {
+  menu: { type: 'MaterialMenu', isRequired: true },
+};
 
-export default TopBarMenuIcon;
+customElements.define('material-topbar-menu-icon', MaterialTopbarMenuIcon);
+
+export default MaterialTopbarMenuIcon;

@@ -1,10 +1,10 @@
-import Pokemons from './components/pokemons.js';
-import TopBar from './components/material/topBar.js';
-import Menu from './components/material/menu.js';
+import PokemonList from './components/PokemonList.js';
+import MaterialTopbar from './components/material/MaterialTopbar.js';
+import MaterialMenu from './components/material/MaterialMenu.js';
 
 const main = document.querySelector('main');
 
-const menu = new Menu({
+const menu = new MaterialMenu({
   title: 'Pokédex',
   items: [
     { icon: 'bookmarks', title: 'Bookmarks' },
@@ -15,8 +15,8 @@ const menu = new Menu({
 });
 
 main.appendChild(menu);
-main.appendChild(new TopBar({ title: 'Pokédex', showMenu: true, menu }));
-main.appendChild(new Pokemons());
+main.appendChild(new MaterialTopbar({ title: 'Pokédex', showMenu: true, menu }));
+main.appendChild(new PokemonList());
 
 async function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
