@@ -7,7 +7,6 @@ class PokemonList extends BaseComponent {
   constructor(props) {
     super(props);
     this.props = props || {};
-    this.state = {};
     this.props.buffer = this.props.buffer || 20;
 
     this.render();

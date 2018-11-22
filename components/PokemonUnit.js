@@ -5,7 +5,6 @@ import BaseComponent from './BaseComponent.js';
 class PokemonUnit extends BaseComponent {
   constructor(props) {
     super(props);
-    this.state = {};
     this.props = props || {};
     this.findSprite();
     this.render();
