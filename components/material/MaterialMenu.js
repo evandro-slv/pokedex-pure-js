@@ -31,12 +31,18 @@ class MaterialMenu extends BaseComponent {
             <nav class="material-nav">
                 ${this.props.title ? `<h6>${this.props.title}</h6>` : ''}
                 <ul>
-                    ${this.props.items.map(item => `<li><a href=''>${item.icon ? `<i class="material-icons">${item.icon}</i>` : ''
+                    ${this.props.items.map(item => `<li><a href='${item.link}'>${item.icon ? `<i class="material-icons">${item.icon}</i>` : ''
   } <span>${item.title}</span></a></li>`).join('')}
                 </ul>
             </nav>
             <div class="overlay"></div>
         `;
+
+    this.querySelectorAll('a').forEach((el) => {
+      el.addEventListener('click', () => {
+        this.overlayOnClick();
+      });
+    });
   }
 }
 

@@ -7,7 +7,7 @@ class PokemonList extends BaseComponent {
   constructor(props) {
     super(props);
     this.props = props || {};
-    this.props.buffer = this.props.buffer || 20;
+    this.props.buffer = this.props.buffer || 10;
 
     this.render();
     this.fetchPokemons();
@@ -22,7 +22,7 @@ class PokemonList extends BaseComponent {
     }
 
     json.results.forEach((pokemon, index) => {
-      if (index < 10) {
+      if (index < this.props.buffer) {
         this.appendChild(new PokemonUnit({ pokemon, id: index + 1 }));
       }
     });

@@ -1,7 +1,10 @@
 class BaseComponent extends HTMLElement {
   constructor(props) {
     super();
-    this.checkPropTypes(props || {});
+
+    if (this.constructor.propTypes !== undefined) {
+      this.checkPropTypes(props || {});
+    }
   }
 
   checkPropTypes(props) {
