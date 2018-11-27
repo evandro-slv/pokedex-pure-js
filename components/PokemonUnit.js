@@ -62,11 +62,6 @@ PokemonUnit.propTypes = {
   pokemon: { type: 'object' },
 };
 
-// skeleton: { type: 'boolean' },
-// title: { type: 'string' },
-// sprite: { type: 'string' },
-// id: { type: 'number' },
-
 customElements.define('pokemon-unit', PokemonUnit);
 
 export default PokemonUnit;

@@ -1,5 +1,7 @@
 import BaseComponent from '../BaseComponent.js';
 import * as api from '../../api/pokeapi/pokemon.js';
+import PokemonTypes from '../PokemonTypes.js';
+import PokemonStats from '../PokemonStats.js';
 
 class PokemonUnitPage extends BaseComponent {
   constructor(props) {
@@ -62,11 +64,13 @@ class PokemonUnitPage extends BaseComponent {
       this.innerHTML = `
         <material-card class="full-width">
           <div class="content loading">
-            <h6>...</h6>
+            <h5>...</h5>
             <div class="placeholder"></div>
             <div class="pokemon-types">
-              <pokemon-type class="loading">......</pokemon-type>
-              <pokemon-type class="loading">......</pokemon-type>
+              <pokemon-types></pokemon-types>
+            </div>
+            <div class="pokemon-stats">
+              <pokemon-stats></pokemon-stats>
             </div>
             ${buttonList}
           </div>
@@ -76,17 +80,22 @@ class PokemonUnitPage extends BaseComponent {
       this.innerHTML = `
         <material-card class="full-width">
           <div class="content">
-            <h6>${api.parseName(this.state.pokemon.name)}</h6>
+            <h5>${api.parseName(this.state.pokemon.name)}</h5>
             <img src="${this.state.pokemon.sprites.front_default}" alt="${this.state.pokemon.name}" />
-            <div class="pokemon-types">
-              ${this.state.pokemon.types.map(type => `<pokemon-type class="${type.type.name}">${type.type.name}</pokemon-type>`).join('')}
-            </div>
+            <div class="pokemon-types"></div>
+            <div class="pokemon-stats"></div>
             ${buttonList}
           </div>
         </material-card>
       `;
 
-      // <pre>${JSON.stringify(this.state.pokemon, null, '\t')}</pre>
+      this.querySelector('.pokemon-types').appendChild(new PokemonTypes({
+        types: this.state.pokemon.types,
+      }));
+
+      this.querySelector('.pokemon-stats').appendChild(new PokemonStats({
+        stats: this.state.pokemon.stats,
+      }));
     }
 
     this.querySelector('button.next').addEventListener('click', this.nextPokemon.bind(this));

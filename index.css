@@ -222,13 +222,13 @@ material-card.full-width .content {
     height: auto;
 }
 
-material-card .content.loading h6 {
-    color: #ddd;
+material-card .content.loading {
+    color: #ccc;
 }
 
 material-card .content .placeholder {
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
     display: block;
     background-color: #eee;
     margin: .5rem auto;
@@ -244,18 +244,19 @@ material-card footer {
 pokemon-list material-card .content img {
     display: block;
     margin: .5rem auto;
-    height: 5rem;
-    width: 5rem;
+    height: 8rem;
+    width: 8rem;
 }
 
 pokemon-unit-page material-card .content img {
     display: block;
     margin: .5rem auto;
-    height: 5rem;
-    width: 5rem;
+    height: 8rem;
+    width: 8rem;
 }
 
 .pokemon-types {
+    margin: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -263,6 +264,7 @@ pokemon-unit-page material-card .content img {
 }
 
 pokemon-type {
+    display: inline-block;
     padding: .5rem 1rem;
     margin: 0 .5rem;
     color: white;
@@ -270,7 +272,7 @@ pokemon-type {
     border-radius: 999px;
 }
 
-pokemon-type.loading   { background-color: #EEEEEE; }
+pokemon-type.loading   { background-color: #eee; }
 
 pokemon-type.normal    { background-color: #A8A878; }
 pokemon-type.fire      { background-color: #F08030; }
@@ -290,6 +292,23 @@ pokemon-type.ghost     { background-color: #705898; }
 pokemon-type.dark      { background-color: #705848; }
 pokemon-type.steel     { background-color: #B8B8D0; }
 pokemon-type.fairy     { background-color: #EE99AC; }
+
+pokemon-stats ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+pokemon-stats ul li {
+    list-style: none;
+    min-width: 15rem;
+    margin: 1rem;
+    padding: .3rem 1rem;
+    border-radius: 999px;
+    background-color: #f2f2f2;
+}
 
 not-found-page {
     display: block;
