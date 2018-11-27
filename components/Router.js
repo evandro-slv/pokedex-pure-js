@@ -12,6 +12,7 @@ class Router extends BaseComponent {
 
   changeRoute() {
     this.innerHTML = '';
+    window.scrollTo(0, 0);
 
     if (!document.location.hash || document.location.hash === '#/') {
       window.dispatchEvent(new CustomEvent('pokemon-unit-load', {
